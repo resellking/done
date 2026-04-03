@@ -1,6 +1,125 @@
-<html>
-<body style="background:#111;color:white;text-align:center;font-family:sans-serif;">
-    <h1>✅ Process completed</h1>
-    <p>Check the same chat where you started the process (It may take a few seconds to send the account)</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Completed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Glow background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,0,0,0.4), transparent);
+    filter: blur(120px);
+    animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 0.6; }
+    to { transform: scale(1.3); opacity: 1; }
+}
+
+/* Card */
+.container {
+    position: relative;
+    background: rgba(20,20,20,0.9);
+    padding: 40px 60px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(255,0,0,0.3);
+    animation: fadeIn 1s ease;
+}
+
+/* Title */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ff3b3b;
+    text-shadow: 0 0 10px rgba(255,0,0,0.8);
+}
+
+/* Text */
+p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Check icon */
+.check {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Fade */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Particles */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh) scale(0.5);
+    }
+    to {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="check">✅</div>
+    <h1>Process Completed</h1>
+    <p>Your reward is being delivered.<br>Check the same Discord chat where you started.</p>
+</div>
+
+<script>
+// Particles generator
+for (let i = 0; i < 40; i++) {
+    let p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    p.style.opacity = Math.random();
+    document.body.appendChild(p);
+}
+</script>
+
 </body>
 </html>
