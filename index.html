@@ -2,145 +2,132 @@
 <html lang="en">
 <head>
     <link rel="icon" href="favicon.png" type="image/png">
-<meta charset="UTF-8">
-<title>Completed</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle at top, #1a1a1a, #000);
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* Glow background */
-body::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,0,0,0.4), transparent);
-    filter: blur(120px);
-    animation: pulse 4s infinite alternate;
-}
-
-@keyframes pulse {
-    from { transform: scale(1); opacity: 0.6; }
-    to { transform: scale(1.3); opacity: 1; }
-}
-
-/* Card */
-.container {
-    position: relative;
-    background: rgba(20,20,20,0.9);
-    padding: 40px 60px;
-    border-radius: 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 40px rgba(255,0,0,0.3);
-    animation: fadeIn 1s ease;
-}
-
-/* Logo */
-.brand {
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    opacity: 0.9;
-
-    background: linear-gradient(90deg, #ffd700, #ffcc00, #fff2a8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-}
-
-/* Title */
-h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px rgba(255,0,0,0.8);
-}
-
-/* Text */
-p {
-    font-size: 14px;
-    color: #ccc;
-}
-
-/* Loader */
-.loader {
-    width: 100%;
-    height: 6px;
-    background: #222;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.bar {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #ff0000, #ff4d4d);
-    box-shadow: 0 0 10px red;
-    animation: load 3s forwards;
-}
-
-@keyframes load {
-    from { width: 0%; }
-    to { width: 100%; }
-}
-
-/* Check icon */
-.check {
-    font-size: 50px;
-    margin-bottom: 10px;
-    display: none;
-    animation: pop 0.6s ease;
-}
-
-@keyframes pop {
-    0% { transform: scale(0); }
-    80% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-/* Fade */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Particles */
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: red;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: float linear infinite;
-}
-
-@keyframes float {
-    from {
-        transform: translateY(100vh) scale(0.5);
+    <style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: radial-gradient(circle at top, #1a1a1a, #000);
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
     }
-    to {
-        transform: translateY(-10vh) scale(1);
+
+    body::before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,0,0,0.4), transparent);
+        filter: blur(120px);
+        animation: pulse 4s infinite alternate;
     }
-}
-</style>
+
+    @keyframes pulse {
+        from { transform: scale(1); opacity: 0.6; }
+        to { transform: scale(1.3); opacity: 1; }
+    }
+
+    .container {
+        position: relative;
+        background: rgba(20,20,20,0.9);
+        padding: 40px 60px;
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 40px rgba(255,0,0,0.3);
+        animation: fadeIn 1s ease;
+    }
+
+    .brand {
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+
+        background: linear-gradient(90deg, #ffd700, #ffcc00, #fff2a8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px rgba(255,0,0,0.8);
+    }
+
+    p {
+        font-size: 14px;
+        color: #ccc;
+        white-space: pre-line;
+    }
+
+    .loader {
+        width: 100%;
+        height: 6px;
+        background: #222;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 20px 0;
+    }
+
+    .bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff0000, #ff4d4d);
+        box-shadow: 0 0 10px red;
+        animation: load 3s forwards;
+    }
+
+    @keyframes load {
+        from { width: 0%; }
+        to { width: 100%; }
+    }
+
+    .check {
+        font-size: 50px;
+        margin-bottom: 10px;
+        display: none;
+        animation: pop 0.6s ease;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0); }
+        80% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: red;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: float linear infinite;
+    }
+
+    @keyframes float {
+        from { transform: translateY(100vh) scale(0.5); }
+        to { transform: translateY(-10vh) scale(1); }
+    }
+    </style>
 </head>
 
 <body>
-
 <div class="container">
     <div class="brand">RESELLKING</div>
 
@@ -153,10 +140,7 @@ p {
         <div class="bar"></div>
     </div>
 
-    <p id="finalText" style="display:none;">
-        Your reward is ready.<br>
-        Check the same Discord chat.
-    </p>
+    <p id="finalText" style="display:none;"></p>
 </div>
 
 <script>
@@ -170,14 +154,50 @@ for (let i = 0; i < 40; i++) {
     document.body.appendChild(p);
 }
 
+// Mensajes dinámicos
+const urlParams = new URLSearchParams(window.location.search);
+const msg = urlParams.get('msg');
+let title = "Processing...";
+let text = "Please wait while we validate your request";
+let showCheck = false;
+
+switch(msg){
+    case "invalid":
+        title = "Invalid Link";
+        text = "Invalid link";
+        break;
+    case "expired":
+        title = "Link Expired";
+        text = "Link expired";
+        break;
+    case "used":
+        title = "Already Used";
+        text = "Already used";
+        break;
+    case "vpn":
+        title = "VPN Detected";
+        text = "🚫 VPN/Proxy detected.\nDisable VPN and try again.\nIf this is an error, contact support.";
+        break;
+    case "rate":
+        title = "Daily Limit Reached";
+        text = "🚫 Daily limit reached (2 accounts).\n⏳ Reset in: check Discord\n\n🔥 Upgrade to PREMIUM:\n• Invite 10 friends → 1 week PREMIUM (10 accounts/day)\n• €20/month → Unlimited access (10 accounts/day)\n\n🚀 Don't miss out!";
+        break;
+    case "success":
+        title = "Process Completed";
+        text = "Your reward is ready.\nCheck the same Discord chat.";
+        showCheck = true;
+        break;
+}
+
 // Simulación de carga
 setTimeout(() => {
-    document.getElementById("title").innerText = "Process Completed";
+    document.getElementById("title").innerText = title;
     document.getElementById("text").style.display = "none";
     document.getElementById("loader").style.display = "none";
     document.getElementById("finalText").style.display = "block";
-    document.getElementById("check").style.display = "block";
-}, 3000);
+    document.getElementById("finalText").innerText = text;
+    if(showCheck) document.getElementById("check").style.display = "block";
+}, 2000);
 </script>
 
 </body>
